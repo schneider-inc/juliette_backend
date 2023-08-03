@@ -5,6 +5,8 @@ const axios = require("axios");
 const Album = require("./models/albumModel")
 const app = express();
 
+const PORT = process.env.PORT || 3030;
+
 app.use(express.json())
 app.use(cors())
 
@@ -156,8 +158,8 @@ main().catch(err => console.log(err))
 async function main() {
     await mongoose.connect("mongodb+srv://schneider-inc:z3taF0nction@juliette.kn39dw3.mongodb.net/albums?retryWrites=true&w=majority")
     .then(() => {
-        app.listen(3000, () => {
-            console.log("Node API app is running on port 3000")
+        app.listen(PORT, () => {
+            console.log(`Node API app is running on port ${PORT}`)
         })
         console.log("Connected to MongoDB")
     }).catch((error) => {
