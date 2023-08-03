@@ -15,6 +15,7 @@ const albumSchema = new mongoose.Schema(
         lentOutReturnDate: String,
         spotifyId: String,
         coverArtUrl: String,
+        wishlist: Boolean,
         songs: Array
     }
 )
